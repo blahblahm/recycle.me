@@ -1,0 +1,44 @@
+<div class="overlay" *ngIf = "cupon">
+    <div class="wrapper">
+        <div class="cupon__detail">
+            <div class="title__wrapper">
+                <div class="iamge__wrapper">
+                    <img class="image__wrapper-item" src="http://127.0.0.1:8000/{{ cupon.image }}" >
+                </div>
+                <div class="image__wrapper-text">
+                    <h3>{{ cupon.title }}</h3>
+                    <p>{{ cupon.discount }} off</p>
+                </div>
+            </div>
+            <div class="text__wrapper">
+                <p class="text__wrapper-item">Get {{ cupon.discount }} off. {{ cupon.description }}</p>
+                <div  class="btn__wrapper">
+                    <a class="btn__wrapper-buy" (click) = "buyCupon(cupon)">Buy now -{{ cupon.price }} P</a>
+                    <a class="btn__wrapper-close" (click) = "clearCupon()">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" *ngIf = "ownedCupon">
+    <div class="wrapper">
+        <div class="cupon__detail">
+            <div class="title__wrapper">
+                <div class="iamge__wrapper">
+                    <img class="image__wrapper-item" src="http://127.0.0.1:8000/{{ ownedCupon.image }}" >
+                </div>
+                <div class="image__wrapper-text">
+                    <h3>{{ ownedCupon.title }}</h3>
+                    <p>{{ ownedCupon.discount }} off</p>
+                </div>
+            </div>
+            <div class="text__wrapper">
+                <p class="text__wrapper-item">Get {{ ownedCupon.discount }} off. {{ ownedCupon.description }}</p>
+                <div  class="btn__wrapper">
+                    <a class="btn__wrapper-close" (click) = "clearCupon()">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

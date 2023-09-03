@@ -1,0 +1,107 @@
+.outer__wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-light;
+    align-content: center;
+
+    .buy__cupons {
+        align-self: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: $color-dark;
+        text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+    }
+}
+
+.all__cupons-wrapper {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.all-cupons {
+    max-width: $container-width;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cupon {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    max-height: 200px;
+    padding: 35px;
+    background-color: $color-skin;
+    border-radius: 12px;
+    margin-left: 20px;
+
+    .image__wrapper {
+        max-width: 150px;
+        
+        &-item {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 30px;
+
+        &-sale {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        &-link {
+            font-size: 18px;
+            font-weight: bold;
+            color: $color-dark-text;
+            line-height: 35px;
+            cursor: pointer;
+        }
+    }
+}
+
+.no__cupon {
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+    }
+
+    &-paragraph {
+        font-size: 30px;
+        font-weight: bold;
+        color: $color-dark-text;
+        padding: 30px;
+    }
+
+    &-btn {
+        padding: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $color-dark;
+        text-decoration: none;
+        border: 2px solid $color-dark;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $color-dark;
+            color: $color-light;
+        }
+    }
+}

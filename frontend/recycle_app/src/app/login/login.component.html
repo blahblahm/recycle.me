@@ -1,0 +1,20 @@
+<div class="login__wrapper">
+    <img class="login__img" src="../../assets/img/login.jpg" alt="recycle img">
+    <div class="login">
+        <h1 class="login__heading">Login</h1>
+        <form [formGroup] = 'loginForm' class="login__form">
+
+            <label for="email">E-mail:</label>
+            <input formControlName = 'email' type="email" id="email" name="email" placeholder="Your e-mail">
+            <span class="required" *ngIf = "loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">*E-mail is required</span>
+
+            <label for="password">Password:</label>
+            <input formControlName = 'password' type="password" id="password" name="password" placeholder="Your password">
+            <span class="required" *ngIf = "loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">*Password is required</span>
+
+            <button (click) = "onLogin()" id="login" type="submit">Login</button>
+            
+        </form>
+        <p class="login__paragraph">Don't have an account? Click here to <a class="login__link" routerLink = "/register">Sign up</a>.</p>
+    </div>
+</div>

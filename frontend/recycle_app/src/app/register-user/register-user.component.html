@@ -1,0 +1,42 @@
+<div class="wrapper__register">
+    <div class="register">
+        <div class="register__image">
+            <img class="image-bottle" src="assets/img/thrown_bottle.jpg" alt="recycle img">
+            <div class="image-bottle --1"></div>
+            <div class="register__text">
+                <h1 class="register__text-heading">Recycle.Me</h1>
+                <p class="register__text-paragraph">is an app designed to encourage people to recycle more by awarding them for thair participation.<br><div class="span">Join us in making a world a better place to Breath in.</div></p>
+            </div>
+        </div>
+
+        <hr class="line">
+
+        <div class="register__form">
+            <h2 class="register__form-heading">Join us</h2>
+            <form [formGroup] = "registrationForm">
+                <label for="first_name">First Name:</label>
+                <input formControlName = "first_name" type="text" name="first_name" id="first_name" placeholder="Your first name">
+                <span class="required" *ngIf = "registrationForm.controls['first_name'].dirty && registrationForm.hasError('required', 'first_name')">*First name is required</span>
+
+                <label for="last_name">Last Name</label>
+                <input required formControlName = "last_name" type="text" name="last_name" id="last_name" placeholder="Your last name">
+                <span class="required" *ngIf = "registrationForm.controls['last_name'].dirty && registrationForm.hasError('required', 'last_name')">*Last name is required</span>
+            
+                <label for="username">Username:</label>
+                <input formControlName = "username" type="text" name="username" id="username" placeholder="Your username">
+                <span class="required" *ngIf = "registrationForm.controls['username'].dirty && registrationForm.hasError('required', 'username')">*Username is required</span>
+
+                <label for="email">E-mail:</label>
+                <input formControlName = "email" type="email" name="email" id="email" placeholder="Your e-mail">
+                <span class="required" *ngIf = "registrationForm.controls['email'].dirty && registrationForm.hasError('required', 'email')">*E-mail is required</span>
+            
+                <label for="password">Password:</label>
+                <input formControlName = "password" type="password" name="password" id="password">
+                <span class="required" *ngIf = "registrationForm.controls['password'].dirty && registrationForm.hasError('required', 'password')">*Password is required</span>
+            
+                <button id="register" type="submit" (click) = "onRegister()">Register</button>
+            </form>
+            <p class="register__paragraph">Already have an account? <a class="register__link" routerLink = "/login">Login</a>.</p>
+        </div>
+    </div>
+</div>

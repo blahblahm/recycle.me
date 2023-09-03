@@ -1,0 +1,21 @@
+<navigation></navigation>
+
+<div class="all__cupons-wrapper">
+    <div class="all-cupons">
+        <div class="cupon" *ngFor = "let cupon of cuponsService.cupons">
+            <div class="cupon__wrapper">
+                <div class="image__wrapper"><img class="image__wrapper-item" src="http://127.0.0.1:8000/{{ cupon.image }}" alt="{{ cupon.title }}"></div>
+                <div class="cupon__text">
+                    <h4>{{ cupon.title }}</h4>
+                    <p class="cupon__text-sale">{{ cupon.discount }}</p>
+                    <a class="cupon__text-link" (click) = "chooseCupon(cupon)">More...</a>
+                </div>
+            </div>
+            <a class="cupon__text-btn" (click) = "buyCupon(cupon)">Buy -{{ cupon.price }} P</a>
+        </div>
+    </div>
+
+    <a class="owned__cupons" routerLink = "/your_cupons">See owned cupons...</a>
+</div>
+<cupon-details [cupon] = "chosenCupon"></cupon-details>
+   

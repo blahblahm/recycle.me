@@ -1,0 +1,22 @@
+<navigation></navigation>
+<div class="outer__wrapper">
+    <div class="all__cupons-wrapper">
+        <div *ngIf = 'yourCuponService.userCupons.length === 0' class="no__cupon-wrapper">
+            <h3 class="no__cupon-paragraph">Currently you don't own any cupons</h3>
+            <a class="no__cupon-btn" routerLink = '/all_cupons'>Buy cupons</a>
+        </div>
+
+        <div *ngFor = "let cupon of yourCuponService.userCupons" class="all-cupons">
+            <div class="cupon">
+                <div class="image__wrapper"><img class="image__wrapper-item" src="http://127.0.0.1:8000/{{ cupon.image }}" alt="Logo image"></div>
+                <div class="cupon__text">
+                    <h4>{{ cupon.title }}</h4>
+                    <p class="cupon__text-sale">{{ cupon.discount }}</p>
+                    <a class="cupon__text-link" (click) = "chooseCupon(cupon)">More...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="buy__cupons" routerLink = "/all_cupons">See all cupons...</a>
+</div>
+<cupon-details [ownedCupon] = "chosenCupon"></cupon-details>

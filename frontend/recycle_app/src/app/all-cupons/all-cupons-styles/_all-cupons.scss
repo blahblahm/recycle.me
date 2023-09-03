@@ -1,0 +1,108 @@
+
+.all__cupons-wrapper {
+    background-color: $color-light;
+    padding: 50px 150px 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.all-cupons {
+    max-width: $container-width;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cupon {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    max-height: 250px;
+    padding: 35px;
+    background-color: $color-skin;
+    border-radius: 12px;
+    margin-left: 20px;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 50px;
+
+    &__wrapper {
+        display: flex;
+        padding-bottom: 60px;
+    }
+
+    .image__wrapper {
+        max-width: 150px;
+        
+        &-item {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 30px;
+
+        &-sale {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        &-link {
+            font-size: 17px;
+            // font-weight: bold;
+            color: $color-dark-text;
+            line-height: 35px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-btn {
+            position: absolute;
+            bottom: 20px;
+            padding: 20px;
+            color: $color-dark-text;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid $color-dark-text;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-dark-text;
+                color: $color-skin;
+            }
+        }
+    }
+}
+
+.owned__cupons {
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-dark;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

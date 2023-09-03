@@ -1,0 +1,56 @@
+.card__wrapper {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: $color-light;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.card {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: $container-width;
+    width: 100%;
+    padding: 50px;
+    background-color: $color-middle;
+    border-radius: 15px;
+    margin-top: 50px;
+
+    &__content {
+        flex: 1 1 50%;
+        width: 50%;
+        max-width: 500px;
+        padding-right: 50px;
+        color: $color-dark-text;
+
+        &-heading {
+            padding: 20px 0;
+        }
+
+        &-paragraph {
+            line-height: 24px;
+            letter-spacing: 1.2px;
+        }
+    }
+
+    &__img {
+        flex: 1 1 50%;
+        width: 50%;
+        max-width: 400px;
+        max-height: 270px;
+        overflow: hidden;
+        border-radius: 15px;
+        
+        &-item {
+            transform: scale(1.1);
+            max-width: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}

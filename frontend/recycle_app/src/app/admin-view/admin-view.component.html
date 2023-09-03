@@ -1,0 +1,23 @@
+<navigation></navigation>
+
+<div class="wrapper">
+    <div class="form_wrapper">
+        <h1>Admin Page</h1>
+
+        <form [formGroup]="form" class="form">
+            <label>
+                <span>User e-mail:</span><input type="email" name="email" formControlName="email">
+            </label>
+
+            <label>
+                <input type="radio" value='Worker' formControlName="role" ><span>Worker</span>
+            </label>
+
+            <label>
+                <input type="radio" value='User' formControlName="role"><span>User</span>
+            </label>
+
+            <input class="btn" type="submit" value="Submit" (click) = 'updateRole()'>
+        </form>
+    </div>
+</div>

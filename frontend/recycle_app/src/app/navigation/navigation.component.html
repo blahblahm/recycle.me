@@ -1,0 +1,38 @@
+<nav *ngIf = "user">
+    <div class="logo" (click) = 'loadNews()'>Recycle.Me</div>
+    <ul class="nav__list">
+        <li class="nav__list-item"><a class="nav__list-item-link" routerLink = '/news'>News</a></li>
+        <li class="nav__list-item"><a class="nav__list-item-link" routerLink = '/profile'>Profile</a></li>
+        <li class="nav__list-item"><a class="nav__list-item-link" routerLink = '/all_cupons'>All cupons</a></li>
+        <li class="nav__list-item"><a class="nav__list-item-link" routerLink = "/your_cupons">Your cupons</a></li>
+        <li class="nav__list-item">{{currentUser.points}} P</li>
+        <li class="nav__list-item"><a class="nav__list-item-link" (click) = 'dropdown()'>Welcome {{currentUser.first_name}}<span class="arrow">&#x2304;</span>
+            <div *ngIf ='visible' class="dropdown">
+                <ul class="dropdown__list">
+                    <li *ngIf = '!disabled' class="dropdown__list-item"><a class="dropdown__list-item-link" routerLink = "/worker">Worker mode</a></li>
+                    <li class="dropdown__list-item"><a class="dropdown__list-item-link" (click) = "loggedOut()">Log out</a></li>
+                </ul>
+            </div>
+        </a></li>
+    </ul>
+</nav>
+
+<nav *ngIf = "!user">
+    <div class="logo">Recycle.Me</div>
+    <ul class="nav__list">
+        <li class="nav__list-item"><a class="nav__list-item-link" (click) = 'dropdown()'>Welcome {{currentUser.first_name}}<span class="arrow">&#x2304;</span>
+            <div *ngIf ='visible' class="dropdown">
+                <ul class="dropdown__list">
+                    <li *ngIf = '!disabled' class="dropdown__list-item"><a class="dropdown__list-item-link" routerLink = "/news">User mode</a></li>
+                    <li class="dropdown__list-item"><a class="dropdown__list-item-link" (click) = "loggedOut()">Log out</a></li>
+                </ul>
+            </div>
+        </a></li>
+    </ul>
+</nav>
+
+
+
+
+
+

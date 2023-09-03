@@ -1,0 +1,15 @@
+<navigation></navigation>
+
+<div class="card__wrapper">
+
+    <div class="card" *ngFor = "let new_news of newsService.news">
+        <div class="card__content">
+            <h2 class="card__content-heading">{{ new_news.heading }}</h2>
+            <p class="card__content-paragraph">{{ new_news.description }}</p>
+        </div>
+        <div class="card__img">
+            <img class="card__img-item" src="http://127.0.0.1:8000/{{ new_news.image }}" alt="{{ new_news.heading }}">
+        </div>
+    </div>
+</div>
+
